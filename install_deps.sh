@@ -18,6 +18,7 @@ if [ $PIPENV_INSTALL_ARGS == "noarg" ]
 then 
     PIPENV_VERBOSITY=-1 pipenv install
     echo Installing dbt dependencies
+    cd dbt/sharadar
     pipenv run dbt deps
 elif [ $PIPENV_INSTALL_ARGS == "nodeps" ]
 then
@@ -27,11 +28,13 @@ then
     rm -rf Pipfile.lock
     PIPENV_VERBOSITY=-1 pipenv install
     echo Installing dbt dependencies
+    cd dbt/sharadar
     pipenv run dbt deps
 elif [ $PIPENV_INSTALL_ARGS == "dev" ]
 then
     PIPENV_VERBOSITY=-1 pipenv install -d
     echo Installing dbt dependencies
+    cd dbt/sharadar
     pipenv run dbt clean
     pipenv run dbt deps 
 fi
