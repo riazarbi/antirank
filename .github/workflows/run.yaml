@@ -1,0 +1,24 @@
+name: sharadar
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+  schedule:
+    - cron:  '20 */1 * * *'
+
+env:
+  GITHUB_PAT: ${{ secrets.GH_PAT }}
+
+jobs:
+  make_run:
+    runs-on: self-hosted
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+      -
+        name: Extract
+        run: |
+          echo "this runs"
