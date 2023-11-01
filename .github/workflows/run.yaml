@@ -19,6 +19,15 @@ jobs:
         name: Checkout
         uses: actions/checkout@v3
       -
-        name: Extract
+        name: Install dependencies
         run: |
-          echo "this runs"
+          bash install_deps.sh
+      -
+        name: Sync sharadar to db
+        run: |
+          pipenv run python src/load_raw.py
+      -
+        name: Rebuild db
+        run: |
+          cd dbt
+          pipenv run dbt build --project-dir=sharadar --target=motherduck
