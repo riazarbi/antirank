@@ -1,0 +1,31 @@
+version: 2
+
+models: # or seeds:
+  - name: stg_actions
+    tests:
+      - dbt_expectations.expect_table_columns_to_match_set:
+          column_list: ["date", "action", "ticker", "name", "value", "contraticker", "contraname"]
+  - name: stg_daily_unpivot
+    tests:
+      - dbt_expectations.expect_table_columns_to_match_set:
+          column_list: ["ticker", "date", "lastupdated", "metric", "value"]
+  - name: stg_events
+    tests:
+      - dbt_expectations.expect_table_columns_to_match_set:
+          column_list: ["ticker", "date", "eventcodes"]
+  - name: stg_indicators
+    tests:
+      - dbt_expectations.expect_table_columns_to_match_set:
+          column_list: ["table", "indicator", "isfilter", "isprimarykey", "title", "description", "unittype"]
+  - name: stg_sf1_unpivot
+    tests:
+      - dbt_expectations.expect_table_columns_to_match_set:
+          column_list: ['ticker', 'dimension', 'calendardate', 'datekey', 'reportperiod', 'lastupdated', 'measure', 'value']
+  - name: stg_sp500
+    tests:
+      - dbt_expectations.expect_table_columns_to_match_set:
+          column_list: ['date', 'action', 'ticker', 'name', 'contraticker', 'contraname', 'note']
+  - name: stg_tickers
+    tests:
+      - dbt_expectations.expect_table_columns_to_match_set:
+          column_list: ['table', 'permaticker', 'ticker', 'name', 'exchange', 'isdelisted', 'category', 'cusips', 'siccode', 'sicsector', 'sicindustry', 'famasector', 'famaindustry', 'sector', 'industry', 'scalemarketcap', 'scalerevenue', 'relatedtickers', 'currency', 'location', 'lastupdated', 'firstadded', 'firstpricedate', 'lastpricedate', 'firstquarter', 'lastquarter', 'secfilings', 'companysite']

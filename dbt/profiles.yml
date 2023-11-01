@@ -1,0 +1,18 @@
+sharadar:
+  outputs:
+    dev:
+      type: duckdb
+      path: dev.duckdb
+      schema: sharadar
+      threads: 1
+    prod:
+      type: duckdb
+      path: prod.duckdb
+      schema: sharadar
+      threads: 4
+    motherduck:
+      type: duckdb
+      path: 'md:antirank'
+      schema: sharadar
+      threads: 4
+  target: dev

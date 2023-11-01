@@ -1,0 +1,48 @@
+version: 2
+
+sources:
+  - name: information_schema
+    schema: information_schema
+    tables:
+      - name: tables
+      - name: columns
+      - name: schemata
+  - name: raw
+    schema: raw
+    tables:
+      - name: actions
+        meta:
+          dagster:
+            asset_key: ["raw_tables"]
+      - name: daily
+        meta:
+          dagster:
+            asset_key: ["raw_tables"]
+      - name: events
+        meta:
+          dagster:
+            asset_key: ["raw_tables"]
+      - name: indicators
+        meta:
+          dagster:
+            asset_key: ["raw_tables"]
+      - name: sf1
+        meta:
+          dagster:
+            asset_key: ["raw_tables"]
+      - name: sp500
+        meta:
+          dagster:
+            asset_key: ["raw_tables"]
+      - name: tickers
+        meta:
+          dagster:
+            asset_key: ["raw_tables"]
+      - name: metrics
+        meta:
+          dagster:
+            asset_key: ["raw_tables"]
+      - name: sep
+        meta:
+          dagster:
+            asset_key: ["raw_tables"]

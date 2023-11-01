@@ -1,0 +1,10 @@
+target/
+dbt_packages/
+logs/
+.raw/
+./venv
+.env
+pyvenv.cfg
+.DS_Store
+.user.yml
+*.duckdb
