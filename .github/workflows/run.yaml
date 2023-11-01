@@ -12,7 +12,7 @@ env:
   GITHUB_PAT: ${{ secrets.GH_PAT }}
 
 jobs:
-  make_run:
+  refresh_sharadar:
     runs-on: self-hosted
     steps:
       -
