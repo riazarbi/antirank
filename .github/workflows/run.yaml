@@ -6,7 +6,7 @@ on:
     branches:
       - 'main'
   schedule:
-    - cron:  '20 */1 * * *'
+    - cron:  '0 3 * * *'
 
 env:
   GITHUB_PAT: ${{ secrets.GH_PAT }}
