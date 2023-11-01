@@ -9,6 +9,6 @@
     )
 }}
 
-SELECT * FROM {{ ref('actions_typed') }}
+SELECT * FROM {{ ref('actions') }}
 
 {% endsnapshot %}

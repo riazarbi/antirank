@@ -9,6 +9,6 @@
       )
 }}
 
-SELECT * FROM {{ ref('events_typed') }}
+SELECT * FROM {{ ref('events') }}
 
 {% endsnapshot %}

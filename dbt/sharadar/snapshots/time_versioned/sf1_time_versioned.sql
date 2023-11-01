@@ -3,12 +3,12 @@
 {{
     config(
       target_schema='sharadar',
-      unique_key="ticker||'-'||dimension||'-'||datekey||'-'||measure",
+      unique_key="ticker||'-'||dimension||'-'||datekey",
       strategy='timestamp',
       updated_at='lastupdated'
       )
 }}
 
-SELECT * FROM {{ ref('sf1_typed') }}
+SELECT * FROM {{ ref('sf1') }}
 
 {% endsnapshot %}

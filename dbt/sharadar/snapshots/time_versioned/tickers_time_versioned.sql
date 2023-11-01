@@ -9,6 +9,6 @@
       )
 }}
 
-SELECT "table" ||'-'||permaticker||'-'||ticker AS id, * FROM {{ ref('tickers_typed') }}
+SELECT "table" ||'-'||permaticker||'-'||ticker AS id, * FROM {{ ref('tickers') }}
 
 {% endsnapshot %}

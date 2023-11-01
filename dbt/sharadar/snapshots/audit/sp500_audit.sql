@@ -9,6 +9,6 @@
       )
 }}
 
-SELECT * FROM {{ ref('sp500_typed') }}
+SELECT * FROM {{ ref('sp500') }}
 
 {% endsnapshot %}

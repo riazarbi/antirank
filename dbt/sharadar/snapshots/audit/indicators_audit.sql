@@ -9,6 +9,6 @@
     )
 }}
 
-SELECT "table" ||'-'||indicator AS id, * FROM {{ ref('indicators_typed') }}
+SELECT "table" ||'-'||indicator AS id, * FROM {{ ref('indicators') }}
 
 {% endsnapshot %}
