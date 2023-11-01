@@ -5,10 +5,6 @@ models: # or seeds:
     tests:
       - dbt_expectations.expect_table_columns_to_match_set:
           column_list: ["date", "action", "ticker", "name", "value", "contraticker", "contraname"]
-  - name: stg_daily_unpivot
-    tests:
-      - dbt_expectations.expect_table_columns_to_match_set:
-          column_list: ["ticker", "date", "lastupdated", "metric", "value"]
   - name: stg_events
     tests:
       - dbt_expectations.expect_table_columns_to_match_set:
@@ -17,10 +13,6 @@ models: # or seeds:
     tests:
       - dbt_expectations.expect_table_columns_to_match_set:
           column_list: ["table", "indicator", "isfilter", "isprimarykey", "title", "description", "unittype"]
-  - name: stg_sf1_unpivot
-    tests:
-      - dbt_expectations.expect_table_columns_to_match_set:
-          column_list: ['ticker', 'dimension', 'calendardate', 'datekey', 'reportperiod', 'lastupdated', 'measure', 'value']
   - name: stg_sp500
     tests:
       - dbt_expectations.expect_table_columns_to_match_set:

@@ -2,7 +2,24 @@ SELECT
 ticker,
 CAST(strptime(date, '%Y-%m-%d') AS DATE) as date,
 CAST(strptime(lastupdated, '%Y-%m-%d') AS DATE) as lastupdated,
-metric,
-value
+CAST(beta1y AS DOUBLE) as beta1y,
+CAST(beta5y AS DOUBLE) as beta5y,
+CAST(dividendyieldforward AS DOUBLE) as dividendyieldforward,
+CAST(dividendyieldtrailing AS DOUBLE) as dividendyieldtrailing,
+CAST(high52w AS DOUBLE) as high52w,
+CAST(high5y AS DOUBLE) as high5y,
+CAST(low52w AS DOUBLE) as low52w ,
+CAST(low5y AS DOUBLE) as low5y,
+CAST(ma200d AS DOUBLE) as ma200d ,
+CAST(ma200w AS DOUBLE) as ma200w,
+CAST(ma50d AS DOUBLE) as ma50d,
+CAST(ma50w AS DOUBLE) as ma50w,
+CAST(price AS DOUBLE) as price,
+CAST(return1y AS DOUBLE) as return1y,
+CAST(return5y AS DOUBLE) as return5y,
+CAST(returnytd AS DOUBLE) as returnytd,
+CAST(volume AS DOUBLE) as volume,
+CAST(volumeavg1m AS DOUBLE) as volumeavg1m,
+CAST(volumeavg3m AS DOUBLE) as volumeavg3m
 FROM
-{{ ref('stg_metrics_unpivot') }}
+{{ ref('stg_metrics') }}

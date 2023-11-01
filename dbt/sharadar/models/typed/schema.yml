@@ -8,7 +8,7 @@ models:
   - name: daily_typed
     tests:
       - dbt_expectations.expect_table_column_count_to_equal_other_table:
-          compare_model: ref("stg_daily_unpivot")
+          compare_model: ref("stg_daily")
   - name: events_typed
     tests:
       - dbt_expectations.expect_table_column_count_to_equal_other_table:
@@ -20,7 +20,7 @@ models:
   - name: sf1_typed
     tests:
       - dbt_expectations.expect_table_column_count_to_equal_other_table:
-          compare_model: ref("stg_sf1_unpivot")
+          compare_model: ref("stg_sf1")
   - name: sp500_typed
     tests:
       - dbt_expectations.expect_table_column_count_to_equal_other_table:
@@ -29,3 +29,11 @@ models:
     tests:
       - dbt_expectations.expect_table_column_count_to_equal_other_table:
           compare_model: ref("stg_tickers")
+  - name: metrics_typed
+    tests:
+      - dbt_expectations.expect_table_column_count_to_equal_other_table:
+          compare_model: ref("stg_metrics")
+  - name: sep_typed
+    tests:
+      - dbt_expectations.expect_table_column_count_to_equal_other_table:
+          compare_model: ref("stg_sep")
