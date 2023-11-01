@@ -6,6 +6,7 @@ PIPENV_INSTALL_ARGS=${1:-noarg}
 echo Installing python deps with args: $PIPENV_INSTALL_ARGS
 
 VIRTUAL_ENV=.venv
+export PATH=$PATH:/home/docker/.local/bin
 
 rm -rf .venv 
 
