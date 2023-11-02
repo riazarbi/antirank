@@ -34,9 +34,11 @@ def entry_point():
         os.makedirs(unzip_dir, exist_ok=True)
         unzip_tables(download_dir, table, unzip_dir)
         log.info(f"Loading {table} to dev...")
-        load_duckdb('dbt/dev.duckdb', table, unzip_dir)
-        log.info(f"Loading {table} to motherduck...")
-        load_duckdb(f'md:antirank?motherduck_token={motherduck_token}', table, unzip_dir)
+        load_duckdb('/data/dev.duckdb', table, unzip_dir)
+        log.info(f"Loading {table} to prod...")
+        load_duckdb('/data/prod.duckdb', table, unzip_dir)
+        #log.info(f"Loading {table} to motherduck...")
+        #load_duckdb(f'md:antirank?motherduck_token={motherduck_token}', table, unzip_dir)
         
 def clean_folders(directory_list):
   for dir in directory_list:
