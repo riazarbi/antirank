@@ -2,9 +2,6 @@ name: sharadar
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - 'main'
   schedule:
     - cron:  '0 3 * * *'
 
@@ -26,14 +23,19 @@ jobs:
         run: |
           bash install_deps.sh
       -
-        name: Sync sharadar to db
+        name: Sync sharadar raw to dev and prod
         run: |
           pipenv run python src/load_raw.py
       -
-        name: Rebuild db
+        name: dbt build dev
         run: |
           cd dbt
-          pipenv run dbt build --project-dir=sharadar --target=motherduck
+          pipenv run dbt build --project-dir=sharadar --target=dev
+      -
+        name: dbt build prod
+        run: |
+          cd dbt
+          pipenv run dbt build --project-dir=sharadar --target=dev
       - 
         name: Export db
         run: |
