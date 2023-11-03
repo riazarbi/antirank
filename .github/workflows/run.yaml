@@ -39,4 +39,4 @@ jobs:
       - 
         name: Export prod db
         run: |
-          pipenv run duckdb /data/prod.duckdb "EXPORT DATABASE '/data/export/' (FORMAT PARQUET)"
+          pipenv run python -c "import duckdb; duckdb.connect(database='/data/prod.duckdb', read_only=True).execute(\"EXPORT DATABASE '/data/export/' (FORMAT PARQUET)\")"
