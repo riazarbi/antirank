@@ -39,4 +39,4 @@ jobs:
       - 
         name: Export prod db
         run: |
-          duckdb /data/prod.duckdb "EXPORT DATABASE '/data/export/' (FORMAT PARQUET)"
+          pipenv run duckdb /data/prod.duckdb "EXPORT DATABASE '/data/export/' (FORMAT PARQUET)"
