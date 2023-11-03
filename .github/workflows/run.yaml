@@ -1,4 +1,4 @@
-name: sharadar
+name: Update Sharadar Data
 
 on:
   workflow_dispatch:
@@ -37,6 +37,6 @@ jobs:
           cd dbt
           pipenv run dbt build --project-dir=sharadar --target=dev
       - 
-        name: Export db
+        name: Export prod db
         run: |
           duckdb /data/prod.duckdb "EXPORT DATABASE '/data/export/' (FORMAT PARQUET)"
