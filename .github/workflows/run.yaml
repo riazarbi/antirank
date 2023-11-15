@@ -35,7 +35,7 @@ jobs:
         name: dbt build prod
         run: |
           cd dbt
-          pipenv run dbt build --project-dir=sharadar --target=dev
+          pipenv run dbt build --project-dir=sharadar --target=prod
       - 
         name: Export prod db
         run: |
