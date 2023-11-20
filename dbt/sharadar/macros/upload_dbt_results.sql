@@ -19,7 +19,7 @@
     {%- set _ = res_dict.node.pop('compiled_code', None)  %}
 
 {# /* Convert to JSON and strip special characters */ #}
-    {%- set res_json = res_dict | tojson |  replace("'", " ")  | replace("\\n", " ") | replace("`", "")| replace("\\", "\\\\")  %}
+    {%- set res_json = res_dict | tojson |  replace("'", " ")  | replace("\\n", " ") | replace("`", "")  %}
 
 {# /* Wrap json in '' so we can pass in as string */ #}
     {%- set results_object = ["'", res_json, "'"] | join(" ")  %}
