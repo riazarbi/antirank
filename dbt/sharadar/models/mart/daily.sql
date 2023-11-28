@@ -1,3 +1,2 @@
-SELECT
-*
-from {{ ref('daily_typed') }}
+SELECT *
+FROM {{ ref('daily_typed') }}

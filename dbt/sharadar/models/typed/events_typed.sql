@@ -1,6 +1,6 @@
-SELECT 
-ticker,
-CAST(strptime(date, '%Y-%m-%d') AS DATE) as date,
-eventcodes
+SELECT
+    ticker,
+    eventcodes,
+    CAST(STRPTIME(date, '%Y-%m-%d') AS DATE) AS date
 FROM
-{{ ref('stg_events') }}
+    {{ ref('stg_events') }}

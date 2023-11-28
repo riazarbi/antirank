@@ -2,7 +2,7 @@ SELECT
     log_write_time,
     cast(json_extract_string(log, '$.execution_time') AS numeric) AS execution_time,
     cast(json_extract_string(log, '$.adapter_response.bytes_processed') AS numeric)
-        AS bytes_processed,
+    AS bytes_processed,
     json_extract_string(log, '$.node.name') AS node_name,
     json_extract_string(log, '$.node.schema') AS schema_name,
     json_extract_string(log, '$.node.database') AS database_name,

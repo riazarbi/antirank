@@ -1,4 +1,3 @@
-SELECT 
-*
+SELECT *
 FROM
-{{ ref('indicators_typed') }}
+    {{ ref('indicators_typed') }}

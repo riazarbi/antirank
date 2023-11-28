@@ -1,3 +1,2 @@
-SELECT
-*
-from {{ ref('sf1_typed') }}
+SELECT *
+FROM {{ ref('sf1_typed') }}

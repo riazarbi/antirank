@@ -1,4 +1,3 @@
-SELECT 
-*
+SELECT *
 FROM
-{{ ref('sp500_typed') }}
+    {{ ref('sp500_typed') }}

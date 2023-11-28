@@ -1,13 +1,13 @@
-SELECT 
-ticker,
-CAST(strptime(date, '%Y-%m-%d') AS DATE) as date,
-CAST(strptime(lastupdated, '%Y-%m-%d') AS DATE) as lastupdated,
-CAST(open AS DOUBLE) as open,
-CAST(high AS DOUBLE) as high,
-CAST(low AS DOUBLE) as low,
-CAST(close AS DOUBLE) as close,
-CAST(volume AS DOUBLE) as volume,
-CAST(closeadj AS DOUBLE) as closeadj,
-CAST(closeunadj AS DOUBLE) as closeunadj
+SELECT
+    ticker,
+    CAST(STRPTIME(date, '%Y-%m-%d') AS DATE) AS date,
+    CAST(STRPTIME(lastupdated, '%Y-%m-%d') AS DATE) AS lastupdated,
+    CAST(open AS DOUBLE) AS open,
+    CAST(high AS DOUBLE) AS high,
+    CAST(low AS DOUBLE) AS low,
+    CAST(close AS DOUBLE) AS close,
+    CAST(volume AS DOUBLE) AS volume,
+    CAST(closeadj AS DOUBLE) AS closeadj,
+    CAST(closeunadj AS DOUBLE) AS closeunadj
 FROM
-{{ ref('stg_sep') }}
+    {{ ref('stg_sep') }}
