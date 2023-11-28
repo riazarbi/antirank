@@ -1,5 +1,5 @@
 SELECT
-    table,
+    "table",
     permaticker,
     ticker,
     name,
