@@ -1,0 +1,2 @@
+[console_scripts]
+ingest_sharadar = ingest.sharadar:entry_point

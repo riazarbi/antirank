@@ -25,17 +25,15 @@ jobs:
       -
         name: Sync sharadar raw to dev and prod
         run: |
-          pipenv run python src/load_raw.py
+          make ingest-sharadar
       -
         name: dbt build dev
         run: |
-          cd dbt
-          pipenv run dbt build --project-dir=sharadar --target=dev
+          make dbt-build TIER=dev
       -
         name: dbt build prod
         run: |
-          cd dbt
-          pipenv run dbt build --project-dir=sharadar --target=prod
+          make dbt-build TIER=prod
       - 
         name: Export prod db
         run: |
